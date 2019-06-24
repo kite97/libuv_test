@@ -39,7 +39,6 @@ void on_read(uv_fs_t *req)
 	else if (req->result == 0)
 	{
 		uv_fs_t close_req;
-		// synchronous
 		uv_fs_close(uv_default_loop(), &close_req, open_req.result, NULL);
 		uv_close((uv_handle_t *)&mysocket, NULL);
 	}
